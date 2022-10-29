@@ -13,7 +13,10 @@ def handler(event, context):
 
         print(user_data)
 
-    print('End SQS-Lamda Function')    
+    return {
+        'statusCode': 200,
+        'body': 'Lamda executed success one item from SQS'
+    }
 
 def get_user_detail(username: str):
     user_data = requests.get('https://api.github.com/users/%s' % username).json()
