@@ -9,7 +9,7 @@ def handler(event, context):
 
     for record in records:
         username = record['body']        
-        user_data = github.get_user_detail(username)
+        user_data = get_user_detail(username)
 
         print(user_data)
 
